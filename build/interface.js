@@ -1840,6 +1840,12 @@ Interface.Piano = function() {
       return this
     },
 
+    setValue : function(index, value, doNotDraw) {
+        if (typeof(this.children[index]) != "undefined") {
+            this.children[index].setValue(value, doNotDraw);
+        }
+    },
+
     placeKeys: function() {
       var x = this._x(),
           y = this._y(),
